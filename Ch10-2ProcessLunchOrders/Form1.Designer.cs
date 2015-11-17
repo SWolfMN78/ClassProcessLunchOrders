@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnFinalizeOrder = new System.Windows.Forms.Button();
+            this.btnAddToOrder = new System.Windows.Forms.Button();
             this.chkHamburger = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -37,41 +37,41 @@
             this.chkAddOnHam1 = new System.Windows.Forms.CheckBox();
             this.chkAddOnHam2 = new System.Windows.Forms.CheckBox();
             this.chkAddOnHam3 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.chkAddOnPiz3 = new System.Windows.Forms.CheckBox();
+            this.chkAddOnPiz2 = new System.Windows.Forms.CheckBox();
+            this.chkAddOnPiz1 = new System.Windows.Forms.CheckBox();
+            this.chkPizza = new System.Windows.Forms.CheckBox();
+            this.chkAddOnSal3 = new System.Windows.Forms.CheckBox();
+            this.chkAddOnSal2 = new System.Windows.Forms.CheckBox();
+            this.chkAddOnSal1 = new System.Windows.Forms.CheckBox();
+            this.chkSalad = new System.Windows.Forms.CheckBox();
+            this.lblSubTotal = new System.Windows.Forms.Label();
             this.lstOrderForm = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnClearOrder = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnFinalizeOrder
             // 
-            this.button1.Location = new System.Drawing.Point(352, 376);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Finalize Order";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFinalizeOrder.Location = new System.Drawing.Point(352, 376);
+            this.btnFinalizeOrder.Name = "btnFinalizeOrder";
+            this.btnFinalizeOrder.Size = new System.Drawing.Size(88, 32);
+            this.btnFinalizeOrder.TabIndex = 0;
+            this.btnFinalizeOrder.Text = "Finalize Order";
+            this.btnFinalizeOrder.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnAddToOrder
             // 
-            this.button2.Location = new System.Drawing.Point(32, 376);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(112, 48);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Add to Order";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAddToOrder.Location = new System.Drawing.Point(32, 376);
+            this.btnAddToOrder.Name = "btnAddToOrder";
+            this.btnAddToOrder.Size = new System.Drawing.Size(112, 48);
+            this.btnAddToOrder.TabIndex = 1;
+            this.btnAddToOrder.Text = "Add to Order";
+            this.btnAddToOrder.UseVisualStyleBackColor = true;
             // 
             // chkHamburger
             // 
@@ -82,6 +82,7 @@
             this.chkHamburger.TabIndex = 2;
             this.chkHamburger.Text = "Hamburger: $6.50";
             this.chkHamburger.UseVisualStyleBackColor = true;
+            this.chkHamburger.CheckedChanged += new System.EventHandler(this.chkHamburger_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -97,10 +98,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.checkBox4);
-            this.groupBox2.Controls.Add(this.checkBox5);
+            this.groupBox2.Controls.Add(this.chkAddOnPiz3);
+            this.groupBox2.Controls.Add(this.chkAddOnPiz2);
+            this.groupBox2.Controls.Add(this.chkAddOnPiz1);
+            this.groupBox2.Controls.Add(this.chkPizza);
             this.groupBox2.Location = new System.Drawing.Point(32, 128);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(256, 120);
@@ -109,10 +110,10 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox3);
-            this.groupBox3.Controls.Add(this.checkBox6);
-            this.groupBox3.Controls.Add(this.checkBox7);
-            this.groupBox3.Controls.Add(this.checkBox8);
+            this.groupBox3.Controls.Add(this.chkAddOnSal3);
+            this.groupBox3.Controls.Add(this.chkAddOnSal2);
+            this.groupBox3.Controls.Add(this.chkAddOnSal1);
+            this.groupBox3.Controls.Add(this.chkSalad);
             this.groupBox3.Location = new System.Drawing.Point(32, 256);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(256, 112);
@@ -122,6 +123,7 @@
             // chkAddOnHam1
             // 
             this.chkAddOnHam1.AutoSize = true;
+            this.chkAddOnHam1.Enabled = false;
             this.chkAddOnHam1.Location = new System.Drawing.Point(32, 48);
             this.chkAddOnHam1.Name = "chkAddOnHam1";
             this.chkAddOnHam1.Size = new System.Drawing.Size(194, 17);
@@ -132,6 +134,7 @@
             // chkAddOnHam2
             // 
             this.chkAddOnHam2.AutoSize = true;
+            this.chkAddOnHam2.Enabled = false;
             this.chkAddOnHam2.Location = new System.Drawing.Point(32, 72);
             this.chkAddOnHam2.Name = "chkAddOnHam2";
             this.chkAddOnHam2.Size = new System.Drawing.Size(174, 17);
@@ -142,6 +145,7 @@
             // chkAddOnHam3
             // 
             this.chkAddOnHam3.AutoSize = true;
+            this.chkAddOnHam3.Enabled = false;
             this.chkAddOnHam3.Location = new System.Drawing.Point(32, 96);
             this.chkAddOnHam3.Name = "chkAddOnHam3";
             this.chkAddOnHam3.Size = new System.Drawing.Size(111, 17);
@@ -149,94 +153,102 @@
             this.chkAddOnHam3.Text = "French fries: $ .75";
             this.chkAddOnHam3.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkAddOnPiz3
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(32, 96);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(85, 17);
-            this.checkBox1.TabIndex = 9;
-            this.checkBox1.Text = "Olives: $ .50";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkAddOnPiz3.AutoSize = true;
+            this.chkAddOnPiz3.Enabled = false;
+            this.chkAddOnPiz3.Location = new System.Drawing.Point(32, 96);
+            this.chkAddOnPiz3.Name = "chkAddOnPiz3";
+            this.chkAddOnPiz3.Size = new System.Drawing.Size(85, 17);
+            this.chkAddOnPiz3.TabIndex = 9;
+            this.chkAddOnPiz3.Text = "Olives: $ .50";
+            this.chkAddOnPiz3.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkAddOnPiz2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(32, 72);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(98, 17);
-            this.checkBox2.TabIndex = 8;
-            this.checkBox2.Text = "Sausage: $ .50";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkAddOnPiz2.AutoSize = true;
+            this.chkAddOnPiz2.Enabled = false;
+            this.chkAddOnPiz2.Location = new System.Drawing.Point(32, 72);
+            this.chkAddOnPiz2.Name = "chkAddOnPiz2";
+            this.chkAddOnPiz2.Size = new System.Drawing.Size(98, 17);
+            this.chkAddOnPiz2.TabIndex = 8;
+            this.chkAddOnPiz2.Text = "Sausage: $ .50";
+            this.chkAddOnPiz2.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // chkAddOnPiz1
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(32, 48);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(104, 17);
-            this.checkBox4.TabIndex = 7;
-            this.checkBox4.Text = "Pepperoni: $ .50";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkAddOnPiz1.AutoSize = true;
+            this.chkAddOnPiz1.Enabled = false;
+            this.chkAddOnPiz1.Location = new System.Drawing.Point(32, 48);
+            this.chkAddOnPiz1.Name = "chkAddOnPiz1";
+            this.chkAddOnPiz1.Size = new System.Drawing.Size(104, 17);
+            this.chkAddOnPiz1.TabIndex = 7;
+            this.chkAddOnPiz1.Text = "Pepperoni: $ .50";
+            this.chkAddOnPiz1.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // chkPizza
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(16, 24);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(84, 17);
-            this.checkBox5.TabIndex = 6;
-            this.checkBox5.Text = "Pizza: $8.50";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.chkPizza.AutoSize = true;
+            this.chkPizza.Location = new System.Drawing.Point(16, 24);
+            this.chkPizza.Name = "chkPizza";
+            this.chkPizza.Size = new System.Drawing.Size(84, 17);
+            this.chkPizza.TabIndex = 6;
+            this.chkPizza.Text = "Pizza: $8.50";
+            this.chkPizza.UseVisualStyleBackColor = true;
+            this.chkPizza.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
-            // checkBox3
+            // chkAddOnSal3
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(32, 88);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(114, 17);
-            this.checkBox3.TabIndex = 13;
-            this.checkBox3.Text = "Bread sticks: $ .25";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkAddOnSal3.AutoSize = true;
+            this.chkAddOnSal3.Enabled = false;
+            this.chkAddOnSal3.Location = new System.Drawing.Point(32, 88);
+            this.chkAddOnSal3.Name = "chkAddOnSal3";
+            this.chkAddOnSal3.Size = new System.Drawing.Size(114, 17);
+            this.chkAddOnSal3.TabIndex = 13;
+            this.chkAddOnSal3.Text = "Bread sticks: $ .25";
+            this.chkAddOnSal3.UseVisualStyleBackColor = true;
             // 
-            // checkBox6
+            // chkAddOnSal2
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(32, 64);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(107, 17);
-            this.checkBox6.TabIndex = 12;
-            this.checkBox6.Text = "Bacon Bits: $ .25";
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.chkAddOnSal2.AutoSize = true;
+            this.chkAddOnSal2.Enabled = false;
+            this.chkAddOnSal2.Location = new System.Drawing.Point(32, 64);
+            this.chkAddOnSal2.Name = "chkAddOnSal2";
+            this.chkAddOnSal2.Size = new System.Drawing.Size(107, 17);
+            this.chkAddOnSal2.TabIndex = 12;
+            this.chkAddOnSal2.Text = "Bacon Bits: $ .25";
+            this.chkAddOnSal2.UseVisualStyleBackColor = true;
             // 
-            // checkBox7
+            // chkAddOnSal1
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(32, 40);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(98, 17);
-            this.checkBox7.TabIndex = 11;
-            this.checkBox7.Text = "Croutons: $ .25";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.chkAddOnSal1.AutoSize = true;
+            this.chkAddOnSal1.Enabled = false;
+            this.chkAddOnSal1.Location = new System.Drawing.Point(32, 40);
+            this.chkAddOnSal1.Name = "chkAddOnSal1";
+            this.chkAddOnSal1.Size = new System.Drawing.Size(98, 17);
+            this.chkAddOnSal1.TabIndex = 11;
+            this.chkAddOnSal1.Text = "Croutons: $ .25";
+            this.chkAddOnSal1.UseVisualStyleBackColor = true;
             // 
-            // checkBox8
+            // chkSalad
             // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(16, 16);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(86, 17);
-            this.checkBox8.TabIndex = 10;
-            this.checkBox8.Text = "Salad: $5.75";
-            this.checkBox8.UseVisualStyleBackColor = true;
+            this.chkSalad.AutoSize = true;
+            this.chkSalad.Location = new System.Drawing.Point(16, 16);
+            this.chkSalad.Name = "chkSalad";
+            this.chkSalad.Size = new System.Drawing.Size(86, 17);
+            this.chkSalad.TabIndex = 10;
+            this.chkSalad.Text = "Salad: $5.75";
+            this.chkSalad.UseVisualStyleBackColor = true;
+            this.chkSalad.CheckedChanged += new System.EventHandler(this.chkSalad_CheckedChanged);
             // 
-            // label1
+            // lblSubTotal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(152, 392);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Selected items Subtotal: ";
+            this.lblSubTotal.AutoSize = true;
+            this.lblSubTotal.Location = new System.Drawing.Point(152, 392);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(124, 13);
+            this.lblSubTotal.TabIndex = 7;
+            this.lblSubTotal.Text = "Selected items Subtotal: ";
             // 
             // lstOrderForm
             // 
@@ -255,14 +267,14 @@
             this.label2.TabIndex = 9;
             this.label2.Text = "Order List";
             // 
-            // button3
+            // btnClearOrder
             // 
-            this.button3.Location = new System.Drawing.Point(448, 376);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 32);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Clear Order";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnClearOrder.Location = new System.Drawing.Point(448, 376);
+            this.btnClearOrder.Name = "btnClearOrder";
+            this.btnClearOrder.Size = new System.Drawing.Size(88, 32);
+            this.btnClearOrder.TabIndex = 10;
+            this.btnClearOrder.Text = "Clear Order";
+            this.btnClearOrder.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
@@ -279,16 +291,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 447);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnClearOrder);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lstOrderForm);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSubTotal);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAddToOrder);
+            this.Controls.Add(this.btnFinalizeOrder);
             this.Name = "Form1";
+            this.Text = "Lunch Order Form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -302,8 +315,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnFinalizeOrder;
+        private System.Windows.Forms.Button btnAddToOrder;
         private System.Windows.Forms.CheckBox chkHamburger;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox chkAddOnHam3;
@@ -311,18 +324,18 @@
         private System.Windows.Forms.CheckBox chkAddOnHam1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkAddOnPiz3;
+        private System.Windows.Forms.CheckBox chkAddOnPiz2;
+        private System.Windows.Forms.CheckBox chkAddOnPiz1;
+        private System.Windows.Forms.CheckBox chkPizza;
+        private System.Windows.Forms.CheckBox chkAddOnSal3;
+        private System.Windows.Forms.CheckBox chkAddOnSal2;
+        private System.Windows.Forms.CheckBox chkAddOnSal1;
+        private System.Windows.Forms.CheckBox chkSalad;
+        private System.Windows.Forms.Label lblSubTotal;
         private System.Windows.Forms.ListBox lstOrderForm;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnClearOrder;
         private System.Windows.Forms.Button btnClose;
     }
 }
